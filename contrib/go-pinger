@@ -1,0 +1,24 @@
+#!/sbin/runscript
+# Copyright 1999-2016 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+pid_file="/var/run/gopinger.pid"
+
+depend() {
+	need net
+	provide gohpinger
+}
+
+start() {
+	ebegin "Starting pinger daemon"
+	start-stop-daemon --start --quiet --pidfile ${pid_file} --make-pidfile --background \
+		--exec /usr/local/bin/go-hpinger
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping pinger daemon"
+	start-stop-daemon  --stop --pidfile ${pid_file}
+	eend $?
+}

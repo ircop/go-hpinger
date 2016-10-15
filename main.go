@@ -43,13 +43,12 @@ func main() {
 	aliveParamId = viper.GetInt("alive_param_id")
 	sendRest = viper.GetBool("rest")
 	restUrl = viper.GetString("rest_url")
-	restPass = viper.GetString("rest_pass")
 	
 	if( dbhost == "" || dbuser == "" || dbpassword == "" || dbsid == "" || swRootId == 0 || aliveParamId == 0 ) {
 		panic( fmt.Errorf("Fatal error: missing required config parameters.") )
 	}
 	
-	if( sendRest == true && (restUrl == "" || restPass == "") ) {
+	if( sendRest == true && (restUrl == "" ) ) {
 		panic("rest_url or rest_pass is empty!")
 	}
 	

@@ -1,0 +1,8 @@
+dbhost="1.1.1.1"
+dbuser="AIS_RPC"
+dbpassword="qweasdzxcvbn"
+dbsid="1.1.1.1/dbsid"
+switch_root_id=201
+alive_param_id=51820501
+rest=true
+rest_url="https://api.domain.tld/rest/switch/set-status"
