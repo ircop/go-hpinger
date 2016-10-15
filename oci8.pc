@@ -1,0 +1,14 @@
+prefix=/root/go/go-hpinger
+exec_prefix=${prefix}
+libdir=/usr/lib64/oracle/11.2.0.4/client/lib/
+includedir=/usr/include/oracle/11.2.0.4/client/
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
+
+Name: oci8
+Description: oci8 library
+Libs: -L${libdir} -lclntsh
+Cflags: -I${includedir}
+Version: 11.2.0.4
